@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ad Running...</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .timer {
+      font-size: 28px;
+      margin-top: 20px;
+      color: #00ffe0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔄 Showing Ad...</h1>
+  <div class="timer">Auto closing in <span id="countdown">10</span> seconds</div>
+
+  <!-- ✅ MultiTag Code -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="162210" async data-cfasync="false"></script>
+
+  <!-- ✅ PopAds Code -->
+  <script type="text/javascript">
+    var _pop = _pop || [];
+    _pop.push(['siteId', 1234567]); // Replace with your PopAds site ID
+    _pop.push(['minBid', 0.000000]);
+    _pop.push(['popundersPerIP', 0]);
+    _pop.push(['delayBetween', 0]);
+    _pop.push(['default', false]);
+    _pop.push(['blockCountries', '']);
+    _pop.push(['blockUserAgents', '']);
+    (function() {
+      var pa = document.createElement('script');
+      pa.type = 'text/javascript';
+      pa.async = true;
+      pa.src = '//c1.popads.net/pop.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(pa, s);
+    })();
+  </script>
+
+  <!-- ✅ Timer + Auto Close Script -->
+  <script>
+    let timer = 10;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      timer--;
+      countdownEl.textContent = timer;
+      if (timer === 0) {
+        clearInterval(interval);
+        window.close();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
