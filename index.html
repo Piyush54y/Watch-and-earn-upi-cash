@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earn ₹5 by Watching Ads</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💸 Watch Ads & Earn ₹5</h1>
+    <p>Watch <strong>100 ads</strong> to get ₹5 Paytm cash</p>
+
+    <div id="adsWatched">Ads Watched Today: <span id="count">0</span>/100</div>
+
+    <div id="progressContainer">
+      <div id="progressBar"></div>
+    </div>
+    <div id="timer">⏳ Timer: <span id="seconds">10</span> seconds</div>
+
+    <button id="startBtn">🚀 Start Earning</button>
+
+    <form id="withdrawForm" style="display: none;">
+      <h3>🎉 You’ve Earned ₹5! Withdraw Now</h3>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="upi" placeholder="Your Paytm UPI ID" required />
+      <button type="submit">Withdraw to Paytm</button>
+    </form>
+
+    <p class="note">Ad auto-opens after 10 sec. Complete 100 to unlock withdrawal.</p>
+  </div>
+
+  <!-- Monetag MultiTag -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="162210" async data-cfasync="false"></script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
