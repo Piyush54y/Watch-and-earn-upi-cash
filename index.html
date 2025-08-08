@@ -1,87 +1,178 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Watch Ads & Earn ₹5 Daily</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>💸 Watch Ads & Earn ₹5 Daily</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Monetag MultiTag -->
-  <script data-cfasync="false" type="text/javascript"
-    src="//wizardscripts.com/script.js"></script>
+  <script data-cfasync="false" type="text/javascript" src="//wizardscripts.com/script.js"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #f0e4ff, #d7f0ff);
-      text-align: center;
-      padding: 40px;
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #fceabb, #f8b500);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Animated Coins Background */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') repeat;
+      background-size: 60px;
+      opacity: 0.05;
+      z-index: 0;
+      animation: moveBg 40s linear infinite;
+    }
+
+    @keyframes moveBg {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
     }
 
     .container {
       background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #ccc;
+      width: 90%;
       max-width: 400px;
-      margin: auto;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    #counter {
+      font-weight: bold;
+      color: #4CAF50;
+      margin-bottom: 5px;
+    }
+
+    #countdown {
+      color: #E91E63;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
     button {
-      background: #4CAF50;
+      background: #ff9800;
       color: white;
       border: none;
-      padding: 15px 25px;
-      border-radius: 8px;
+      padding: 14px 30px;
+      border-radius: 12px;
       font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e68900;
     }
 
     button:disabled {
-      background-color: #aaa;
+      background: #ccc;
       cursor: not-allowed;
     }
 
     input[type="text"] {
       padding: 10px;
-      width: 80%;
-      margin-bottom: 10px;
-      border-radius: 6px;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      width: 90%;
+      margin-top: 10px;
     }
 
     .hidden {
       display: none;
     }
 
-    h1, h2 {
-      color: #333;
+    .progress {
+      height: 10px;
+      background: #eee;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 15px 0;
     }
 
-    #countdown {
-      font-size: 18px;
-      color: #FF5722;
+    .progress-bar {
+      height: 10px;
+      background: #4CAF50;
+      width: 0%;
+      transition: 0.5s;
+    }
+
+    #successMsg {
+      color: #4CAF50;
+      font-weight: bold;
       margin-top: 10px;
+    }
+
+    .engage {
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    .engage span {
+      display: inline-block;
+      margin: 5px;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h1>🎁 Watch Ads & Earn ₹5</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/1049/1049169.png" class="logo" alt="Money Logo">
+    <h1>💰 Watch Ads & Earn ₹5 Daily</h1>
     <p id="counter">Ads Watched: 0 / 100</p>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <button id="startBtn">🚀 Start Earning</button>
     <p id="countdown" class="hidden">⏳ Please wait...</p>
 
     <div id="withdrawal" class="hidden">
-      <h2>🎉 You've Earned ₹5!</h2>
+      <h2>🎉 You Earned ₹5!</h2>
       <form id="upiForm">
-        <input type="text" id="upiId" placeholder="Enter your UPI ID" required>
+        <input type="text" id="upiId" placeholder="Enter your UPI ID" required />
         <br>
         <button type="submit">💸 Withdraw ₹5</button>
       </form>
       <p id="successMsg"></p>
+    </div>
+
+    <div class="engage">
+      <p>💡 Pro Tip: Watch all 100 ads daily to earn ₹150/month!</p>
+      <span>🔥 Daily Limit: ₹5</span>
+      <span>🎯 Stay consistent</span>
+      <span>🏆 Instant UPI Rewards</span>
     </div>
   </div>
 
@@ -107,14 +198,17 @@
     }
 
     const counter = document.getElementById("counter");
+    const progressBar = document.getElementById("progressBar");
     const startBtn = document.getElementById("startBtn");
+    const countdown = document.getElementById("countdown");
     const withdrawal = document.getElementById("withdrawal");
     const upiForm = document.getElementById("upiForm");
     const successMsg = document.getElementById("successMsg");
-    const countdown = document.getElementById("countdown");
 
     function updateUI() {
       counter.textContent = `Ads Watched: ${adsWatched} / ${maxAds}`;
+      let percent = (adsWatched / maxAds) * 100;
+      progressBar.style.width = `${percent}%`;
       if (adsWatched >= maxAds) {
         startBtn.disabled = true;
         withdrawal.classList.remove("hidden");
@@ -133,13 +227,10 @@
       const timer = setInterval(() => {
         seconds--;
         countdown.textContent = `⏳ Ad will close in ${seconds}s`;
-
         if (seconds <= 0) {
           clearInterval(timer);
           countdown.classList.add("hidden");
-          if (adWindow && !adWindow.closed) {
-            adWindow.close();
-          }
+          if (adWindow && !adWindow.closed) adWindow.close();
 
           adsWatched++;
           localStorage.setItem("adsWatched", adsWatched);
@@ -151,7 +242,7 @@
     upiForm.onsubmit = (e) => {
       e.preventDefault();
       const upi = document.getElementById("upiId").value;
-      successMsg.textContent = `₹5 will be sent to ${upi} within 24 hours! 🎉`;
+      successMsg.textContent = `₹5 will be sent to ${upi} within 24 hours! ✅`;
       upiForm.style.display = "none";
     };
 
