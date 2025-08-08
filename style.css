@@ -1,0 +1,78 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e6f0ff, #f9f9f9);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#adsWatched {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+}
+
+#progressContainer {
+  width: 100%;
+  background: #ddd;
+  border-radius: 8px;
+  height: 20px;
+  overflow: hidden;
+  margin: 10px 0;
+  display: none;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: #28a745;
+  transition: width 1s linear;
+}
+
+#timer {
+  display: none;
+  font-weight: bold;
+  color: #333;
+}
